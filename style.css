@@ -1,0 +1,430 @@
+@charset "utf-8";
+@import url("https://use.typekit.net/ofd3qnu.css");
+@import url('http://fonts.cdnfonts.com/css/gotham');
+
+html {
+  font-family: Gotham, Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	width: 100%;
+	position: relative;
+}
+
+body {
+	color: #323232;
+	background: #EFEFEF;
+	text-align: center;
+	margin: 0;
+	min-height: 100vh;
+	width: 100%;
+	  justify-content: center;
+  align-items: center;
+  /*overflow: hidden;*/
+	position: relative;
+	oveflow: scroll;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight: 900;
+}
+
+p {
+	font-weight: 400;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 220px;
+  height: 343px;
+  perspective: 1000px;
+	display: inline-block;
+	margin: 0px 40px 0px 20px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  /*box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);*/
+	border-radius: 20px;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+	border-radius: 20px;
+	border:solid white 12px;
+	padding: 10px;
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card-front {
+		background-image: linear-gradient(#006BAD, #00A8E4);
+  color: #fff;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+	/*text-transform: uppercase;*/
+	background-color: #fff;
+  color: #323232;
+}
+	
+.container {
+  height: 100%;
+  position: relative;
+  /*border: 3px solid green;*/
+}
+
+.center {
+	width: 100%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#flipper {
+	cursor: pointer;
+	margin: 50px 0 100px 0;
+	display: inline;
+}
+
+
+
+
+
+.instructions {
+		margin: 20px;
+	display: block;
+	position: relative;
+}
+
+.hidden {
+	opacity: 0;
+}
+
+.unhidden {
+	opacity: 100;
+}
+
+.unhidden, .hidden {
+	transition: opacity 0.5s;
+}
+
+.mainbox{
+  position: relative;
+  width: 480px;
+  height: 480px;
+	
+}
+.mainbox:after{
+  position: absolute;
+  content: '';
+  width: 32px;
+  height: 32px;
+  background: url('images/arrow-left.png') no-repeat;
+  background-size: 32px;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.box{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  border: 10px solid #fff;
+  overflow: hidden;
+  transition: transform ease 3s;
+	box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+
+}
+span{
+  width: 50%;
+  height: 50%;
+  /*display: inline-block;*/
+  position: absolute;
+	/*box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);*/
+}
+.span1{
+  clip-path: polygon(0 92%, 100% 50%, 0 8%);
+    background-image: linear-gradient(#EF3A79, #F48037);
+  top: 120px;
+  left: 0;
+}
+.span2{
+  clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+  background-image: linear-gradient(#006BAD, #00A8E4);
+  top: 120px;
+  right: 0;
+}
+.span3{
+  clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+  background-image: linear-gradient(#CEDD41, #FEF229);
+  bottom: 0;
+  left: 120px;
+}
+.span4{
+  clip-path: polygon(50% 100%, 92% 0, 8% 0);
+  background-image: linear-gradient(#00A955, #AED24A);
+  top: 0;
+  left: 120px;
+}
+
+
+.box1 .span3 b{
+   transform: translate(-50%, -50%) rotate(-270deg);
+}
+.box1 .span1 b,
+.box2 .span1 b{
+  transform: translate(-50%, -50%) rotate(185deg);
+}
+.box2 .span3 b{
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.box1 .span4 b,
+.box2 .span4 b{
+  transform: translate(-50%, -50%) rotate(-85deg);
+}
+
+.box2{
+  width: 100%;
+  height: 100%;
+  transform: rotate(-135deg);
+}
+span b{
+  font-size: 24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+}
+
+.spin{
+  position: absolute;
+  top: calc(50% + 10px);
+  left: calc(50% + 10px);
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  background-color: #006BAD;
+  color: #fff;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+}
+.spin:active{
+  width: 70px;
+  height: 70px;
+  font-size: 20px;
+}
+
+.mainbox.animate:after{
+  animation: animateArrow 0.7s ease infinite;
+}
+@keyframes animateArrow{
+  50%{
+    right: -40px;
+  }
+}
+
+.float-left {
+	float: left;
+	width: 50%;
+}
+
+.float-right {
+	float: left;
+}
+
+#game-container {
+	margin: 50px 0 0 0;
+	height: 550px;
+}
+
+.icon {
+	width: 50px;
+	height: 50px;
+}
+
+
+/*added for header*/
+
+/* Style the header with a grey background and some padding */
+header {
+  overflow: hidden;
+  background-color: #323232;
+  /*padding: 20px 10px;*/
+	color: white;
+}
+
+/* Style the header links */
+header a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo link (notice that we set the same value of line-height and font-size to prevent the header to increase when the font gets bigger */
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+	width: 200px;
+	height: 100px;
+	background-image: url("images/Vlerick logo standard landscape white.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+/* Float the link section to the left */
+.header-left {
+  float: left;
+}
+
+/*added for buttons*/
+.button {
+	background-color: #00A955;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+.button:hover {
+	opacity: 0.8;
+}
+
+.button:active {
+	/*box-shadow: 0 5px 20px rgba(0,0,0,0.0);*/
+	transform: scale(0.97);
+}
+
+#timer-container {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	background: #323232;
+	color: white;
+	border-bottom-left-radius: 20px;
+	padding: 10px;
+	width: 400px;
+	height: 80px;
+}
+
+#timer {
+	/*font-size: 2em;*/
+	font-weight: bold;
+	/*margin: 20px;*/
+}
+
+.guide-button {
+	padding: 40px 20px;
+	cursor: pointer;
+	font-size: 1em;
+	font-weight: 900;
+}
+
+#guide-container {
+	position: absolute;
+	width: 500px;
+	height: 100%;
+	background-color: #323232;
+	transition:left 0.5s ease;
+	z-index: 0;
+	top: 0;
+	cursor: pointer;
+	color: white;
+	padding: 40px;
+}
+
+#guide-container.unopen {
+	left: -600px;
+	
+}
+
+#guide-container.open {
+	left: 0px;
+	
+}
+
+.ilb {
+	width: 150px;
+	display: inline-block;
+}
+
+#question-number {
+	text-transform: uppercase;
+	/*font-size: 1.5em;*/
+	margin: auto;
+}
+
+.guide-icon {
+	width: 40px;
+	margin: 10px;
+}
+
+.icon-guide {
+	text-align: left;
+}
+
+.x-button {
+position: absolute;
+	top: 10px;
+	right: 10px;
+	font-weight: 900;
+}
+
+.guide-icon-text {
+	margin: auto;
+	padding: 1em; 
+	height: auto;
+}
+
+#whiteout {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #EFEFEF;
+	transition: opacity 0.5s;
+	overflow: auto;
+}
+
+#whiteout.unopen {
+	opacity: 0;
+	pointer-events: none;
+}
+
+#whiteout.open {
+	opacity: 0.8;
+}

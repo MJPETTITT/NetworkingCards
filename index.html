@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+
+<body onload="shuffle(questions);">
+<header>
+
+    <div class="logo header-left"></div>
+    <div class="guide-button header-left" onClick="openIt(document.getElementById('guide-container')); openIt(document.getElementById('whiteout'))">Instructions</div>
+	
+	<div class="guide-button header-right"><div id="timer">1:00 </div></div>	
+
+</header>
+
+	
+<div id="game-container">
+	
+<div id="flipper" onclick="flipOnOff();">
+  <div class="flip-card" id="card-a">
+    <div class="flip-card-inner">
+      <div class="flip-card-front" id="card-front-a">
+        <div class="container">
+          <div class="center">
+            <h1>Q1</h1>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card-back" id="card-back-a">
+        <div class="container">
+          <div class="center">
+            <h2 id="question-container"></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flip-card" id="card-b">
+    <div class="flip-card-inner">
+      <div class="flip-card-front" id="card-front-b">
+        <div class="container">
+          <div class="center">
+            <h1>Q2</h1>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card-back" id="card-back-b">
+        <div class="container">
+          <div class="center">
+            <h2 id="how-to-container" class="hidden"></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+	<div id="whiteout" class="open"></div>
+	
+	
+	<div id="guide-container" class="open" onClick="unopenIt(document.getElementById('guide-container'));unopenIt(document.getElementById('whiteout'));">
+		<div class="x-button">X</div>
+	<h2>GETTING TO KNOW EACH OTHER</h2>
+		<p>The goal of this exercise is to meet people you haven’t met yet, and get to know them a little better in 3 easy steps:</p>
+		<p>1. Find a partner and stand still</p>
+		<p>2. Ask you partner one of the two questions on your card, and answer one of the two questions on their card. Try to do this in less than one minute</p>
+		<p>3. Exchange your cards and find a new partner. </p>
+		<h2>TOP TIPS</h2>
+		<p>Be flexible: adapt your question if you notice it’s difficult to answer.</p>
+		<p>5. Click the card deck to stop your turn, and click again to start with the next player.</p>
+		<p>Pay attention to the time limit (60’’), so that you talk to as many people as possible.</p>
+			
+</div>
+</body>
+</html>
